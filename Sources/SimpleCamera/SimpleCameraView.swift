@@ -11,16 +11,16 @@ public struct SimpleCameraView: View {
 
     @Environment(\.dismiss) var dismiss
 
-    let onTakePhoto: (UIImage) async -> ()
+    let onTakePhoto: (UIImage, DismissAction) async -> ()
 
-    public init(_ onTakePhoto: @escaping (UIImage) async -> ()) {
+    public init(_ onTakePhoto: @escaping (UIImage, DismissAction) async -> ()) {
         self.onTakePhoto = onTakePhoto
     }
 
     public var body: some View {
         NavigationStack {
             CameraView { image in
-                await onTakePhoto(image)
+                await onTakePhoto(image, dismiss)
             }
             .ignoresSafeArea()
             .overlay {

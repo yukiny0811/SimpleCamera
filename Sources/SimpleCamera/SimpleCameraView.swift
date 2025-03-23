@@ -27,7 +27,7 @@ public struct SimpleCameraView: View {
                 ZStack {
                     VStack {
                         Spacer()
-                        Text("タップで写真が撮れます")
+                        Text("タップで写真が撮れます", bundle: .module)
                             .kerning(6)
                             .foregroundStyle(.white.opacity(0.6))
                             .padding(.bottom, 100)
@@ -36,12 +36,12 @@ public struct SimpleCameraView: View {
                 }
                 .ignoresSafeArea()
             }
-            .navigationTitle("写真を撮る")
+            .navigationTitle(String(localized: "写真を撮る", bundle: .module))
             .navigationBarTitleDisplayMode(.large)
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("キャンセル", role: .cancel) {
+                    Button(String(localized: "キャンセル", bundle: .module), role: .cancel) {
                         dismiss()
                     }
                 }

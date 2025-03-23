@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SimpleCamera",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v17)
     ],
@@ -16,8 +17,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SimpleCamera"
+            name: "SimpleCamera",
+            resources: [
+                .process("Resources")
+            ]
         ),
-
     ]
 )

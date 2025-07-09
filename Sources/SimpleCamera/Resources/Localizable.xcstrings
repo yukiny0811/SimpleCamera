@@ -18,6 +18,7 @@
       }
     },
     "タップで写真が撮れます" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

@@ -23,19 +23,6 @@ public struct SimpleCameraView: View {
                 await onTakePhoto(image, dismiss)
             }
             .ignoresSafeArea()
-            .overlay {
-                ZStack {
-                    VStack {
-                        Spacer()
-                        Text("タップで写真が撮れます", bundle: .module)
-                            .kerning(6)
-                            .foregroundStyle(.white.opacity(0.6))
-                            .padding(.bottom, 100)
-                    }
-                    .allowsHitTesting(false)
-                }
-                .ignoresSafeArea()
-            }
             .navigationTitle(String(localized: "写真を撮る", bundle: .module))
             .navigationBarTitleDisplayMode(.large)
             .toolbarBackground(.hidden, for: .navigationBar)
